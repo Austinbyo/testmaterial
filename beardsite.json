@@ -258,8 +258,8 @@
                 },
                 "osProfile": {
                     "computerName": "[parameters('virtualMachines_backendSERVER_name')]",
-                    "adminUsername": "beardmin",
-                    "adminPassword": "mM%Vc!562yTj",
+                    "adminUsername": "ausadmin",
+                    "adminPassword": "Jzx39dip136!!!",
                     "windowsConfiguration": {
                         "provisionVMAgent": true,
                         "enableAutomaticUpdates": true
@@ -312,8 +312,8 @@
                 },
                 "osProfile": {
                     "computerName": "[parameters('virtualMachines_frontendSERVER_name')]",
-                    "adminUsername": "beardmin",
-                    "adminPassword": "mM%Vc!562yTj",
+                    "adminUsername": "ausadmin",
+                    "adminPassword": "Jzx39dip136!!!",
                     "linuxConfiguration": {
                         "disablePasswordAuthentication": false,
                         "provisionVMAgent": true
