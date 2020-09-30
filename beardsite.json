@@ -1,6 +1,6 @@
 {
     "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
-    "contentVersion": "1.0.0.3",
+    "contentVersion": "1.0.0.4",
     "parameters": {
         "virtualMachines_backendSERVER_name": {
             "defaultValue": "backendSERVER",
@@ -56,7 +56,9 @@
             "type": "String"
         }
     },
-    "variables": {},
+    "variables": {
+
+    },
     "resources": [
         {
             "type": "Microsoft.Network/networkSecurityGroups",
@@ -387,7 +389,7 @@
             "name": "[parameters('virtualMachines_backendSERVERtwo_name')]",
             "location": "[resourceGroup().location]",
             "dependsOn": [
-                "[resourceId('Microsoft.Network/networkInterfaces', parameters('networkInterfaces_backendserver889_name'))]"
+                "[resourceId('Microsoft.Network/networkInterfaces', parameters('networkInterfaces_backendserver829_name'))]"
             ],
             "tags": {
                 "BeardSite": "[resourceGroup().location]"
@@ -405,7 +407,7 @@
                     },
                     "osDisk": {
                         "osType": "Windows",
-                        "name": "[concat(parameters('virtualMachines_backendSERVER_name'), '_OsDisk_1_ef3ab3c577ea4dd5827852baae056008')]",
+                        "name": "[concat(parameters('virtualMachines_backendSERVERtwo_name'), '_OsDisk_1_ef3ab3c577ea4dd5827852baae056008')]",
                         "createOption": "FromImage",
                         "caching": "ReadWrite",
                         "managedDisk": {
@@ -416,7 +418,7 @@
                     "dataDisks": []
                 },
                 "osProfile": {
-                    "computerName": "[parameters('virtualMachines_backendSERVER_name')]",
+                    "computerName": "[parameters('virtualMachines_backendSERVERtwo_name')]",
                     "adminUsername": "ausadmin",
                     "adminPassword": "Jzx39dip136!!!",
                     "windowsConfiguration": {
@@ -429,7 +431,7 @@
                 "networkProfile": {
                     "networkInterfaces": [
                         {
-                            "id": "[resourceId('Microsoft.Network/networkInterfaces', parameters('networkInterfaces_backendserver889_name'))]"
+                            "id": "[resourceId('Microsoft.Network/networkInterfaces', parameters('networkInterfaces_backendserver829_name'))]"
                         }
                     ]
                 }
@@ -521,7 +523,7 @@
                     {
                         "name": "ipconfig1",
                         "properties": {
-                            "privateIPAddress": "10.0.4.4",
+                            "privateIPAddress": "10.0.4.9",
                             "privateIPAllocationMethod": "Dynamic",
                             "publicIPAddress": {
                                 "id": "[resourceId('Microsoft.Network/publicIPAddresses', parameters('publicIPAddresses_backendSERVER_ip_name'))]"
